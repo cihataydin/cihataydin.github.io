@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cihataydin.github.io/blog</id>
+    <title>Personal Blog Blog</title>
+    <updated>2026-04-04T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://cihataydin.github.io/blog"/>
+    <subtitle>Personal Blog Blog</subtitle>
+    <icon>https://cihataydin.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>https://cihataydin.github.io/blog/welcome</id>
+        <link href="https://cihataydin.github.io/blog/welcome"/>
+        <updated>2026-04-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Bu benim ilk blog sitem. Amacım faydalı bilgiler paylaşıp biriktirmek, kişisel bilgi deposu oluşturmaktır.]]></summary>
+        <content type="html"><![CDATA[<p>Bu benim ilk blog sitem. Amacım faydalı bilgiler paylaşıp biriktirmek, kişisel bilgi deposu oluşturmaktır.</p>
+<p>Diğer blog yazılarında görüşmek üzere!</p>]]></content>
+        <category label="Hello" term="Hello"/>
+        <category label="Hola" term="Hola"/>
+    </entry>
+</feed>

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcihataydin_github_io=globalThis.webpackChunkcihataydin_github_io||[]).push([[947],{6600(i){i.exports=JSON.parse('{"authors":[{"name":"Cihat Ayd\u0131n","title":"Backend Developer","socials":{"linkedin":"https://www.linkedin.com/in/cihat-aydin/","github":"https://github.com/cihataydin"},"key":"cihat","page":null,"count":0}]}')}}]);
