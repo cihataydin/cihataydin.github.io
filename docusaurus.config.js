@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Personal Blog',
-  tagline: 'Follow the white rabbit!',
+  title: 'Wake up! Geo...',
+  tagline: 'The Matrix has you...',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -75,13 +75,13 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Personal Blog',
+        title: 'Geo',
         logo: {
-          alt: 'Personal Blog Logo',
+          alt: 'Geo Logo',
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'white rabbit', position: 'left'},
           {
             href: 'https://github.com/cihataydin',
             label: 'GitHub',
@@ -91,18 +91,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Links',
-            items: [
-              {
-                label: 'Github',
-                href: 'https://github.com/cihataydin',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Personal Blog, Cihat Aydın`,
+        copyright: `Copyright © ${new Date().getFullYear()}`,
       },
       prism: {
         theme: prismThemes.github,

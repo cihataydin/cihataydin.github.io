@@ -1,0 +1,197 @@
+/* Timeline item: 3-column grid [card | axis | card] */
+.item {
+  display: grid;
+  grid-template-columns: 1fr var(--timeline-axis-width) 1fr;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+/* Left: card in col 1, dot in col 2, col 3 empty */
+.itemLeft .card {
+  grid-column: 1;
+  grid-row: 1;
+}
+.itemLeft .dotWrapper {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Right: col 1 empty, dot in col 2, card in col 3 */
+.itemRight .dotWrapper {
+  grid-column: 2;
+  grid-row: 1;
+}
+.itemRight .card {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Dot on the vertical axis */
+.dotWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.dot {
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
+  background: var(--timeline-dot-color);
+  border-radius: 50%;
+  border: 3px solid var(--ifm-background-color, #fff);
+  box-shadow: 0 0 0 2px var(--timeline-dot-color);
+  flex-shrink: 0;
+}
+
+/* Card base */
+.card {
+  position: relative;
+}
+
+.cardInner {
+  background: var(--timeline-card-bg);
+  border-radius: var(--timeline-card-radius);
+  box-shadow: var(--timeline-card-shadow);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cardInner:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Horizontal connector line between card and dot */
+.connector {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: var(--timeline-connector-color);
+  width: 100%;
+}
+
+.cardLeft .connector {
+  right: 0;
+  left: auto;
+}
+
+.cardRight .connector {
+  left: 0;
+  right: auto;
+}
+
+/* Card content */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+}
+
+.readingTime {
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-500);
+  background: var(--ifm-color-emphasis-100);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.title {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.title a {
+  color: var(--ifm-heading-color);
+  text-decoration: none;
+}
+
+.title a:hover {
+  color: var(--ifm-color-primary);
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--timeline-year-bg);
+  color: var(--timeline-year-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.tag:hover {
+  background: var(--ifm-color-primary-lighter);
+  color: #fff;
+}
+
+.readMore {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+/* ── Mobile ── */
+@media (max-width: 996px) {
+  .item {
+    grid-template-columns: 28px 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Both left and right collapse to: dot in col 1, card in col 2 */
+  .itemLeft .dotWrapper,
+  .itemRight .dotWrapper {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: flex-start;
+    padding-top: 1.5rem;
+  }
+
+  .itemLeft .card,
+  .itemRight .card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* Hide horizontal connector on mobile */
+  .connector {
+    display: none;
+  }
+}

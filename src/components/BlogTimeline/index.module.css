@@ -1,0 +1,62 @@
+.timeline {
+  position: relative;
+  padding: 1rem 0 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Vertical center line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - var(--timeline-line-width) / 2);
+  width: var(--timeline-line-width);
+  background: var(--timeline-line-color);
+  z-index: 0;
+}
+
+.yearGroup {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Year marker centered on the vertical line */
+.yearMarker {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin: 2rem 0 1.5rem;
+}
+
+.yearLabel {
+  background: var(--timeline-year-bg);
+  color: var(--timeline-year-color);
+  border: 2px solid var(--timeline-dot-color);
+  border-radius: 999px;
+  padding: 0.25rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
+/* ── Mobile ── */
+@media (max-width: 996px) {
+  /* Move vertical line to the left */
+  .timeline::before {
+    left: 13px;
+  }
+
+  .yearMarker {
+    justify-content: flex-start;
+    padding-left: 40px;
+  }
+}

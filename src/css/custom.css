@@ -27,4 +27,26 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Timeline - dark mode overrides */
+  --timeline-line-color: #1e3a2f;
+  --timeline-card-bg: #1e2a25;
+  --timeline-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  --timeline-connector-color: rgba(37, 194, 160, 0.35);
+  --timeline-year-bg: #1e3a2f;
+}
+
+/* Timeline variables */
+:root {
+  --timeline-line-color: #d4e8dc;
+  --timeline-line-width: 2px;
+  --timeline-dot-color: var(--ifm-color-primary);
+  --timeline-dot-size: 14px;
+  --timeline-card-bg: var(--ifm-card-background-color, #fff);
+  --timeline-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --timeline-card-radius: 8px;
+  --timeline-year-color: var(--ifm-color-primary);
+  --timeline-year-bg: #eef7f2;
+  --timeline-connector-color: rgba(46, 133, 85, 0.3);
+  --timeline-axis-width: 60px;
 }
