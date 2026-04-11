@@ -7,6 +7,11 @@
   margin-bottom: 2.5rem;
   font-size: 1.8rem;
   color: var(--ifm-heading-color);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+:global([data-theme='dark']) .heading {
+  text-shadow: 0 0 20px rgba(0, 255, 65, 0.5), 0 0 40px rgba(0, 255, 65, 0.2);
 }
 
 .timeline {
@@ -45,6 +50,11 @@
   margin-top: 0.3rem;
 }
 
+:global([data-theme='dark']) .dot {
+  box-shadow: 0 0 0 2px #00ff41, 0 0 8px #00ff41, 0 0 16px rgba(0, 255, 65, 0.4);
+  border-color: #0a0a0a;
+}
+
 .line {
   flex: 1;
   width: 2px;
@@ -74,10 +84,19 @@
 .title a {
   color: var(--ifm-heading-color);
   text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .title a:hover {
   color: var(--ifm-color-primary);
+}
+
+:global([data-theme='dark']) .title a {
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.25);
+}
+
+:global([data-theme='dark']) .title a:hover {
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
 }
 
 .description {

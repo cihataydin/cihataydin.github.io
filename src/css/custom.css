@@ -1,52 +1,400 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
-/* You can override the default Infima variables here. */
+/* ── Light mode: Krem / Editorial ──────────────────────────── */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary: rich green */
+  --ifm-color-primary: #16a34a;
+  --ifm-color-primary-dark: #128f3e;
+  --ifm-color-primary-darker: #108238;
+  --ifm-color-primary-darkest: #0c662c;
+  --ifm-color-primary-light: #18b552;
+  --ifm-color-primary-lighter: #1ac258;
+  --ifm-color-primary-lightest: #2dd96d;
+
+  /* Backgrounds — warm cream */
+  --ifm-background-color: #fafaf7;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-card-background-color: #ffffff;
+
+  /* Text */
+  --ifm-font-color-base: #1a1a1a;
+  --ifm-heading-color: #111a13;
+
+  /* Code */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-}
+  --docusaurus-highlighted-code-line-bg: rgba(22, 163, 74, 0.08);
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-  /* Timeline - dark mode overrides */
-  --timeline-line-color: #1e3a2f;
-  --timeline-card-bg: #1e2a25;
-  --timeline-card-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-  --timeline-connector-color: rgba(37, 194, 160, 0.35);
-  --timeline-year-bg: #1e3a2f;
-}
-
-/* Timeline variables */
-:root {
-  --timeline-line-color: #d4e8dc;
+  /* Timeline */
+  --timeline-line-color: #c8e6d4;
   --timeline-line-width: 2px;
-  --timeline-dot-color: var(--ifm-color-primary);
+  --timeline-dot-color: #16a34a;
   --timeline-dot-size: 14px;
-  --timeline-card-bg: var(--ifm-card-background-color, #fff);
-  --timeline-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --timeline-card-bg: #ffffff;
+  --timeline-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   --timeline-card-radius: 8px;
-  --timeline-year-color: var(--ifm-color-primary);
-  --timeline-year-bg: #eef7f2;
-  --timeline-connector-color: rgba(46, 133, 85, 0.3);
+  --timeline-year-color: #16a34a;
+  --timeline-year-bg: #f0faf4;
+  --timeline-connector-color: rgba(22, 163, 74, 0.25);
   --timeline-axis-width: 60px;
+}
+
+/* ── Matrix dark mode ──────────────────────────────────────── */
+[data-theme='dark'] {
+  /* Primary: Matrix green */
+  --ifm-color-primary: #00ff41;
+  --ifm-color-primary-dark: #00e63b;
+  --ifm-color-primary-darker: #00d938;
+  --ifm-color-primary-darkest: #00b32e;
+  --ifm-color-primary-light: #1aff52;
+  --ifm-color-primary-lighter: #26ff59;
+  --ifm-color-primary-lightest: #4dff72;
+
+  /* Backgrounds */
+  --ifm-background-color: #0a0a0a;
+  --ifm-background-surface-color: #0d150d;
+  --ifm-navbar-background-color: #050a05;
+  --ifm-footer-background-color: #050a05;
+  --ifm-card-background-color: #0a140a;
+
+  /* Text */
+  --ifm-font-color-base: #c8ffc8;
+  --ifm-heading-color: #00ff41;
+  --ifm-link-color: #00ff41;
+  --ifm-link-hover-color: #4dff72;
+  --ifm-color-emphasis-200: rgba(0, 255, 65, 0.15);
+  --ifm-color-emphasis-300: rgba(0, 255, 65, 0.2);
+  --ifm-color-emphasis-500: rgba(0, 255, 65, 0.5);
+  --ifm-color-emphasis-600: rgba(0, 255, 65, 0.6);
+  --ifm-color-emphasis-700: rgba(0, 255, 65, 0.7);
+  --ifm-color-emphasis-900: #00ff41;
+
+  /* Code */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 255, 65, 0.1);
+
+  /* Timeline - Matrix overrides */
+  --timeline-line-color: rgba(0, 255, 65, 0.2);
+  --timeline-line-width: 2px;
+  --timeline-dot-color: #00ff41;
+  --timeline-dot-size: 14px;
+  --timeline-card-bg: #0a140a;
+  --timeline-card-shadow: 0 0 15px rgba(0, 255, 65, 0.08), inset 0 0 0 1px rgba(0, 255, 65, 0.15);
+  --timeline-card-radius: 6px;
+  --timeline-year-color: #00ff41;
+  --timeline-year-bg: #051005;
+  --timeline-connector-color: rgba(0, 255, 65, 0.2);
+  --timeline-axis-width: 60px;
+}
+
+/* ── Light mode: global overrides ─────────────────────────── */
+
+/* Monospace font for headings in both modes */
+h1, h2, h3, h4 {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.02em;
+}
+
+/* Navbar */
+:root .navbar {
+  border-bottom: 1px solid #e8f4ed;
+  box-shadow: 0 1px 8px rgba(22, 163, 74, 0.06);
+}
+
+:root .navbar__brand b,
+:root .navbar__link {
+  color: #111a13;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+:root .navbar__link:hover,
+:root .navbar__link--active {
+  color: #16a34a !important;
+}
+
+/* Hero — light editorial */
+:root .hero--primary {
+  background: linear-gradient(160deg, #f0faf4 0%, #fafaf7 60%, #fdf8f0 100%);
+  border-bottom: 1px solid #d4edd9;
+}
+
+:root .hero__title {
+  color: #111a13;
+  text-shadow: none;
+}
+
+:root .hero__subtitle {
+  color: #4a7a5a;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+/* Buttons */
+:root .button--secondary {
+  color: #16a34a;
+  border-color: rgba(22, 163, 74, 0.5);
+  background: transparent;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+:root .button--secondary:hover {
+  background: rgba(22, 163, 74, 0.07);
+  border-color: #16a34a;
+  box-shadow: 0 2px 12px rgba(22, 163, 74, 0.15);
+}
+
+:root .button--outline.button--primary {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+/* Footer — light mode: slim, warm gray */
+:root .footer {
+  padding: 0.75rem 0 !important;
+}
+
+:root .footer--dark {
+  background: #f0f0ed !important;
+  border-top: 1px solid #dde8e0;
+}
+
+:root .footer__title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7c6e;
+}
+
+:root .footer__link-item,
+:root .footer__copyright {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #8a9e8d;
+}
+
+:root .footer__link-item:hover {
+  color: #16a34a;
+}
+
+/* Blog sidebar */
+:root [class*='sidebarItemTitle'] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b9e7a;
+}
+
+:root [class*='sidebarItemLink'] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #2d6a45;
+}
+
+:root [class*='sidebarItemLink']:hover {
+  color: #16a34a;
+}
+
+:root [class*='yearGroupHeading'] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #9dc4a8;
+}
+
+/* Scrollbar */
+:root ::-webkit-scrollbar {
+  width: 6px;
+  background: #f0f4f1;
+}
+
+:root ::-webkit-scrollbar-thumb {
+  background: rgba(22, 163, 74, 0.2);
+  border-radius: 3px;
+}
+
+:root ::-webkit-scrollbar-thumb:hover {
+  background: rgba(22, 163, 74, 0.4);
+}
+
+/* ── Matrix: global overrides ──────────────────────────────── */
+
+/* Monospace font for all headings */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4 {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.02em;
+}
+
+/* Navbar */
+[data-theme='dark'] .navbar {
+  background: #050a05;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.18);
+  box-shadow: 0 0 24px rgba(0, 255, 65, 0.08);
+}
+
+[data-theme='dark'] .navbar__brand b,
+[data-theme='dark'] .navbar__link {
+  color: #00ff41 !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: #4dff72 !important;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+}
+
+[data-theme='dark'] .navbar__link--active {
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.8) !important;
+}
+
+[data-theme='dark'] .navbar__toggle svg path {
+  stroke: #00ff41;
+}
+
+/* Hero banner */
+[data-theme='dark'] .hero--primary {
+  background: #050a05;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+}
+
+[data-theme='dark'] .hero__title {
+  color: #00ff41;
+  font-family: 'JetBrains Mono', monospace;
+  text-shadow: 0 0 30px rgba(0, 255, 65, 0.5), 0 0 60px rgba(0, 255, 65, 0.2);
+  letter-spacing: -0.03em;
+}
+
+[data-theme='dark'] .hero__subtitle {
+  color: rgba(0, 255, 65, 0.65);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* Buttons in dark mode */
+[data-theme='dark'] .button--secondary {
+  color: #00ff41;
+  border-color: rgba(0, 255, 65, 0.5);
+  background: transparent;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+[data-theme='dark'] .button--secondary:hover {
+  background: rgba(0, 255, 65, 0.08);
+  border-color: #00ff41;
+  color: #00ff41;
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.3);
+}
+
+[data-theme='dark'] .button--outline.button--primary {
+  color: #00ff41;
+  border-color: rgba(0, 255, 65, 0.5);
+  background: transparent;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+[data-theme='dark'] .button--outline.button--primary:hover {
+  background: rgba(0, 255, 65, 0.08);
+  border-color: #00ff41;
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.3);
+}
+
+/* Footer — dark mode: slim, Matrix */
+[data-theme='dark'] .footer {
+  background: #050a05 !important;
+  border-top: 1px solid rgba(0, 255, 65, 0.15);
+  padding: 0.75rem 0 !important;
+}
+
+[data-theme='dark'] .footer__title {
+  color: #00ff41;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-theme='dark'] .footer__link-item,
+[data-theme='dark'] .footer__copyright {
+  color: rgba(0, 255, 65, 0.45);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: #00ff41;
+}
+
+/* Blog sidebar */
+[data-theme='dark'] .sidebar_re4s {
+  background: #050a05;
+  border-right: 1px solid rgba(0, 255, 65, 0.1);
+}
+
+[data-theme='dark'] [class*='sidebarItemTitle'] {
+  color: rgba(0, 255, 65, 0.5);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[data-theme='dark'] [class*='sidebarItemLink'] {
+  color: rgba(0, 255, 65, 0.6);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+[data-theme='dark'] [class*='sidebarItemLink']:hover {
+  color: #00ff41;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+[data-theme='dark'] [class*='yearGroupHeading'] {
+  color: rgba(0, 255, 65, 0.35);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+}
+
+/* Scrollbar */
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 6px;
+  background: #050a05;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 65, 0.25);
+  border-radius: 3px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 65, 0.45);
+}
+
+/* Subtle scanlines overlay */
+[data-theme='dark'] html::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.04) 3px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
 }

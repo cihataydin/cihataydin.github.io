@@ -56,12 +56,29 @@
   box-shadow: var(--timeline-card-shadow);
   border: 1px solid var(--ifm-color-emphasis-200);
   padding: 1.25rem 1.5rem;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 
 .cardInner:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(22, 163, 74, 0.15);
   transform: translateY(-2px);
+}
+
+/* Matrix dark mode: neon glow on cards */
+:global([data-theme='dark']) .cardInner {
+  border-color: rgba(0, 255, 65, 0.18);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.07), inset 0 0 0 1px rgba(0, 255, 65, 0.1);
+}
+
+:global([data-theme='dark']) .cardInner:hover {
+  box-shadow: 0 0 24px rgba(0, 255, 65, 0.2), 0 0 48px rgba(0, 255, 65, 0.08);
+  border-color: rgba(0, 255, 65, 0.45);
+  transform: translateY(-2px);
+}
+
+:global([data-theme='dark']) .dot {
+  box-shadow: 0 0 0 2px #00ff41, 0 0 10px #00ff41, 0 0 20px rgba(0, 255, 65, 0.4);
+  border-color: #0a0a0a;
 }
 
 /* Horizontal connector line between card and dot */
@@ -116,10 +133,20 @@
 .title a {
   color: var(--ifm-heading-color);
   text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  transition: text-shadow 0.2s;
 }
 
 .title a:hover {
   color: var(--ifm-color-primary);
+}
+
+:global([data-theme='dark']) .title a {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.25);
+}
+
+:global([data-theme='dark']) .title a:hover {
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.7);
 }
 
 .description {
@@ -156,15 +183,32 @@
   color: #fff;
 }
 
+:global([data-theme='dark']) .tag {
+  border: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+:global([data-theme='dark']) .tag:hover {
+  background: rgba(0, 255, 65, 0.12);
+  color: #00ff41;
+  border-color: rgba(0, 255, 65, 0.5);
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.5);
+}
+
 .readMore {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--ifm-color-primary);
   text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .readMore:hover {
   text-decoration: underline;
+}
+
+:global([data-theme='dark']) .readMore:hover {
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+  text-decoration: none;
 }
 
 /* ── Mobile ── */

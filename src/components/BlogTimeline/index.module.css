@@ -39,7 +39,18 @@
   padding: 0.25rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+:global([data-theme='dark']) .yearLabel {
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.4), 0 0 24px rgba(0, 255, 65, 0.15);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+  border-color: #00ff41;
+}
+
+:global([data-theme='dark']) .timeline::before {
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.15);
 }
 
 .empty {
