@@ -22,7 +22,7 @@ export default function MiniTimeline() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <h2 className={styles.heading}>Son Yazılar</h2>
+        <h2 className={styles.heading}>Knock, knock, Geo.</h2>
         <div className={styles.timeline}>
           {posts.map((post) => {
             const { title, permalink, date } = post;
@@ -44,7 +44,7 @@ export default function MiniTimeline() {
         </div>
         <div className={styles.viewAll}>
           <Link to="/blog" className="button button--outline button--primary">
-            Tüm yazılar →
+            all articles →
           </Link>
         </div>
       </div>
