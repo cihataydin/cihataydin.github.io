@@ -5,6 +5,21 @@ import styles from './index.module.css';
 import Translate from '@docusaurus/Translate';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { usePluralForm } from '@docusaurus/theme-common';
+
+function useReadingTimePlural() {
+  const { selectMessage } = usePluralForm();
+  return (readingTimeFloat) => {
+    const readingTime = Math.ceil(readingTimeFloat);
+    return selectMessage(
+      readingTime,
+      translate(
+        { id: 'theme.blog.post.readingTime.plurals' },
+        { readingTime },
+      ),
+    );
+  };
+}
 
 function formatDate(dateString, locale) {
   return new Intl.DateTimeFormat(locale, {
@@ -16,6 +31,7 @@ function formatDate(dateString, locale) {
 
 export default function BlogTimelineItem({ post, position }) {
   const { i18n } = useDocusaurusContext();
+  const pluralReadingTime = useReadingTimePlural();
   const { title, permalink, date, description, tags, readingTime } = post;
   const isLeft = position === 'left';
 
@@ -27,12 +43,8 @@ export default function BlogTimelineItem({ post, position }) {
             {formatDate(date, i18n.currentLocale)}
           </time>
           {readingTime !== undefined && (
-            <span className={styles.readingTime}>{translate(
-                {
-                  id: 'theme.blog.post.readingTime.plurals',
-                },
-                { readingTime: Math.ceil(readingTime) }
-              )}
+            <span className={styles.readingTime}>
+              {pluralReadingTime(readingTime)}
             </span>
           )}
         </div>
