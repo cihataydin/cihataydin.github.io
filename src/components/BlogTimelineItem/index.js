@@ -4,9 +4,10 @@ import clsx from 'clsx';
 import styles from './index.module.css';
 import Translate from '@docusaurus/Translate';
 import { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-function formatDate(dateString) {
-  return new Intl.DateTimeFormat('tr-TR', {
+function formatDate(dateString, locale) {
+  return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -14,6 +15,7 @@ function formatDate(dateString) {
 }
 
 export default function BlogTimelineItem({ post, position }) {
+  const { i18n } = useDocusaurusContext();
   const { title, permalink, date, description, tags, readingTime } = post;
   const isLeft = position === 'left';
 
@@ -22,7 +24,7 @@ export default function BlogTimelineItem({ post, position }) {
       <div className={styles.cardInner}>
         <div className={styles.meta}>
           <time dateTime={date} className={styles.date}>
-            {formatDate(date)}
+            {formatDate(date, i18n.currentLocale)}
           </time>
           {readingTime !== undefined && (
             <span className={styles.readingTime}>{translate(
