@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cihataydin.github.io/en/blog</id>
+    <title>Wake up! Geo... Blog</title>
+    <updated>2026-04-04T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://cihataydin.github.io/en/blog"/>
+    <subtitle>Wake up! Geo... Blog</subtitle>
+    <icon>https://cihataydin.github.io/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>https://cihataydin.github.io/en/blog/welcome</id>
+        <link href="https://cihataydin.github.io/en/blog/welcome"/>
+        <updated>2026-04-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is my first blog site. My goal is to share and collect useful information, and to build a personal knowledge repository.]]></summary>
+        <content type="html"><![CDATA[<p>This is my first blog site. My goal is to share and collect useful information, and to build a personal knowledge repository.</p>
+<p>See you in other blog posts!</p>]]></content>
+        <category label="Hello" term="Hello"/>
+        <category label="Hola" term="Hola"/>
+    </entry>
+</feed>
