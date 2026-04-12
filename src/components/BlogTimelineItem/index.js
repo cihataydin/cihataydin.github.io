@@ -2,6 +2,8 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './index.module.css';
+import Translate from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 
 function formatDate(dateString) {
   return new Intl.DateTimeFormat('tr-TR', {
@@ -23,7 +25,13 @@ export default function BlogTimelineItem({ post, position }) {
             {formatDate(date)}
           </time>
           {readingTime !== undefined && (
-            <span className={styles.readingTime}>{Math.ceil(readingTime)} dk okuma</span>
+            <span className={styles.readingTime}>{translate(
+                {
+                  id: 'theme.blog.post.readingTime.plurals',
+                },
+                { readingTime: Math.ceil(readingTime) }
+              )}
+            </span>
           )}
         </div>
         <h3 className={styles.title}>
@@ -40,7 +48,7 @@ export default function BlogTimelineItem({ post, position }) {
           </div>
         )}
         <Link to={permalink} className={styles.readMore}>
-          Devamını oku →
+          <Translate id="theme.blog.post.readMore"></Translate>
         </Link>
       </div>
       <div className={clsx(styles.connector, isLeft ? styles.connectorLeft : styles.connectorRight)} />

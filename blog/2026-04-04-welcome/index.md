@@ -1,6 +1,6 @@
 ---
 slug: welcome
-title: Welcome
+title: Hoş Geldiniz
 # authors: [cihat]
 tags: [hello, hola]
 ---
