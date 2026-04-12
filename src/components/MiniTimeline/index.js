@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 // @generated alias points to .docusaurus/ build artifacts
 import recentPostsData from '@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default';
 import styles from './index.module.css';
 
-function formatDate(dateString) {
-  return new Intl.DateTimeFormat('tr-TR', {
+function formatDate(dateString, locale) {
+  return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -13,6 +14,7 @@ function formatDate(dateString) {
 }
 
 export default function MiniTimeline() {
+  const { i18n } = useDocusaurusContext();
   const posts = recentPostsData?.items?.slice(0, 5) ?? [];
 
   if (!posts.length) {
@@ -33,7 +35,7 @@ export default function MiniTimeline() {
                   <div className={styles.line} />
                 </div>
                 <div className={styles.content}>
-                  <time className={styles.date}>{formatDate(date)}</time>
+                  <time className={styles.date}>{formatDate(date, i18n.currentLocale)}</time>
                   <h3 className={styles.title}>
                     <Link to={permalink}>{title}</Link>
                   </h3>
