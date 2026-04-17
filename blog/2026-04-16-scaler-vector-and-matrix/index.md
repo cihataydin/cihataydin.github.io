@@ -131,7 +131,7 @@ a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22}
 \end{bmatrix}
 $$
 
-Matris çarpımının bu şekilde tanımlanmasının altında yatan sezgi şudur: matris çarpımı, dönüşümlerin kompozisyonudur. $AB$ ifadesi, önce $B$ dönüşümünü sonra $A$ dönüşümünü uygulamak anlamına gelir. Bu sezgi, derin öğrenmede art arda gelen katmanların neden matris çarpımıyla ifade edildiğini anlamanın anahtarıdır.
+Matris çarpımının bu şekilde tanımlanmasının altında yatan sezgi şudur: matris çarpımı, dönüşümlerin kompozisyonudur. $AB$ ifadesi, önce $B$ dönüşümünü sonra $A$ dönüşümünü uygulamak anlamına gelir. Bu sezgi, derin öğrenmede art arda gelen katmanların neden matris çarpımıyla ifade edildiğini anlamanın anahtarıdır. Matris çarpımı değişmeli değildir: genel olarak $AB \neq BA$. Dönüşüm sırasını değiştirmek farklı bir sonuç doğurur.
 
 ### Bir Matrisin Transpozu
 $\text{Bir } m \times n \text{ matris } A \text{ için transpozu } A^{\top} \text{ bir } n \times m \text{ matristir:}$

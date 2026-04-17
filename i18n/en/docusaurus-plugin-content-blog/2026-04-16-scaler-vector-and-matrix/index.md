@@ -131,7 +131,7 @@ a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22}
 \end{bmatrix}
 $$
 
-The intuition behind defining matrix multiplication this way is as follows: matrix multiplication is the composition of transformations. The expression $AB$ means applying transformation $B$ first and then transformation $A$. This intuition is the key to understanding why successive layers in deep learning are expressed through matrix multiplication.
+The intuition behind defining matrix multiplication this way is as follows: matrix multiplication is the composition of transformations. The expression $AB$ means applying transformation $B$ first and then transformation $A$. This intuition is the key to understanding why successive layers in deep learning are expressed through matrix multiplication. Matrix multiplication is not commutative: in general, $AB \neq BA$. Changing the order of transformations yields a different result.
 
 ### Transpose of a Matrix
 $\text{For an } m \times n \text{ matrix } A \text{, its transpose } A^{\top} \text{ is an } n \times m \text{ matrix:}$
