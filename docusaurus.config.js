@@ -6,6 +6,9 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
+const remarkMath = require('remark-math');
+const rehypeKatex = require('rehype-katex');
+
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
@@ -68,12 +71,21 @@ const config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
         },
         theme: {
           customCss: './src/css/custom.css',
         },
       }),
     ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+    },
   ],
 
   themeConfig:

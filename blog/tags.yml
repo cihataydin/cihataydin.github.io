@@ -7,3 +7,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+linear-algebra:
+  label: Linear Algebra
+  permalink: /linear-algebra
+  description: Branch of mathematics
