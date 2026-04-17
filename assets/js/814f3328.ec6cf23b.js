@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcihataydin_github_io=globalThis.webpackChunkcihataydin_github_io||[]).push([[472],{5513(i){i.exports=JSON.parse('{"title":"Son Yaz\u0131lar","items":[{"title":"Ho\u015f Geldiniz","permalink":"/blog/welcome","unlisted":false,"date":"2026-04-04T00:00:00.000Z"}]}')}}]);
