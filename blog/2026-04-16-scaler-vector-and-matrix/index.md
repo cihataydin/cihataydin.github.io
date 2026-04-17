@@ -21,7 +21,7 @@ $$
 + \begin{bmatrix} v_{x_1} \\ v_{x_2} \end{bmatrix}
 = \begin{bmatrix} u_{x_1} + v_{x_1} \\ u_{x_2} + v_{x_2} \end{bmatrix}
 \quad
-u,v \in \mathbb{R}^{2x1}
+\mathbf{u},\mathbf{v} \in \mathbb{R}^{2}
 $$
 
 Bir vektörü skaler ile çarpmak; o skalerin her bileşen ile çarpılması demektir.
@@ -32,11 +32,17 @@ k \cdot \mathbf{v}
 \quad
 k \in \mathbb{R},
 \quad
-v \in \mathbb{R}^{2x1}
+\mathbf{v} \in \mathbb{R}^{2}
 $$
 
+### Vektörün Uzunluğu (Norm)
+
+Bir vektörün uzunluğu (Öklid normu) bileşenlerinin karelerinin toplamının kareköküdür:
+
+$$\|\mathbf{v}\| = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$$
+
 ### Birim Vektör
-Uzunluğu 1 birim olan vektörlerdir. Koordinat eksenlerini temsil etmek için kullanılır.
+Uzunluğu 1 birim olan, yani $\|\mathbf{v}\| = 1$ koşulunu sağlayan vektörlerdir. Koordinat eksenlerini temsil etmek için kullanılır.
 
 $$\mathbf{v} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = x_1\begin{bmatrix} 1 \\ 0 \end{bmatrix} + x_2\begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
 
@@ -52,20 +58,26 @@ $x_1, ..., x_n$ koordinat eksenleri olarak adlandırılır. Her bir koordinat ek
 
 ### Matris
 
-Matris lineer bir dönüşümdür. Lineer dönüşüm ise uzaydaki noktaları/şekilleri ölçeklendiren bir işlemdir. $A \in \mathbb{R}^{m \times n}$ olsun. O zaman $A$ $m \times n$ boyutunda bir matristir. Burada $m$ satır, $n$ sütun boyutudur.
-
-$$
-A = \begin{bmatrix}
-a_1^1 & a_2^1 & \cdots & a_n^1 \\
-a_1^2 & a_2^2 & \cdots & a_n^2 \\
-\vdots & \vdots & \ddots & \vdots \\
-a_1^m & a_2^m & \cdots & a_n^m
-\end{bmatrix}
-$$
-
 > Unfortunately, no one can be told what the Matrix is. You have to see it for yourself.
 >
 > — Morpheus
+
+Matris, seçili bir baza göre bir lineer dönüşümü temsil eder. Lineer dönüşüm ise orijini sabit tutan, doğruları doğru olarak koruyan ve paralel doğruların paralelliğini bozmayan bir dönüşümdür. Formal olarak $T$ dönüşümünün lineer olması için şu iki koşulu sağlaması gerekir:
+
+$$T(\mathbf{u}+\mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}), \qquad T(k\mathbf{v}) = kT(\mathbf{v})$$
+
+Bu tanım; döndürme, yansıtma, ölçeklendirme, kesme (shear) ve izdüşüm gibi işlemlerin hepsini kapsar.
+
+$A \in \mathbb{R}^{m \times n}$ olsun. O zaman $A$ $m \times n$ boyutunda bir matristir. Burada $m$ satır, $n$ sütun boyutudur.
+
+$$
+A = \begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+$$
 
 ### Matris Toplama ve Çarpma
 
@@ -119,6 +131,8 @@ a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22}
 \end{bmatrix}
 $$
 
+Matris çarpımının bu şekilde tanımlanmasının altında yatan sezgi şudur: matris çarpımı, dönüşümlerin kompozisyonudur. $AB$ ifadesi, önce $B$ dönüşümünü sonra $A$ dönüşümünü uygulamak anlamına gelir. Bu sezgi, derin öğrenmede art arda gelen katmanların neden matris çarpımıyla ifade edildiğini anlamanın anahtarıdır.
+
 ### Bir Matrisin Transpozu
 $\text{Bir } m \times n \text{ matris } A \text{ için transpozu } A^{\top} \text{ bir } n \times m \text{ matristir:}$
 
@@ -143,22 +157,33 @@ Transpoz kendisine eşit olan kare matrise simetrik matris denir.
 
 $A = A^{\top} \quad \Longleftrightarrow \quad a_{ij} = a_{ji} \quad \forall\, i, j$
 
+Derin öğrenmede kovaryans matrisi, Hessian ve Gram matrisi gibi simetrik matrislerle sık karşılaşılır.
+
 ### Matris & Vektör Geometrik Yorum
 
-Matris ve vektörün çarpımını, o matrisin vektör üzerine uygulanan lineer bir dönüşümdür.
+Bir matrisin bir vektörle çarpımı, o matrisin temsil ettiği lineer dönüşümün vektöre uygulanmasıdır.
 $$
 \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} a \\ c \end{bmatrix} + y\begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} ax+by \\ cx+dy \end{bmatrix}
 $$
 
-Bir  örnek çözelim:
+Bir örnek çözelim:
 $\newline
-A = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix} \in \mathbb{R}^{2x2}$ matris ve $\mathbf{v} = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \in \mathbb{R}^{2x1}$ vektör olsun.
+A = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix} \in \mathbb{R}^{2 \times 2}$ matris ve $\mathbf{v} = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \in \mathbb{R}^{2}$ vektör olsun.
 $$
 \mathbf{v'} = A\mathbf{v} = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 2\cdot1 + 1\cdot1 \\ 1\cdot1 + 3\cdot1 \end{bmatrix} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}
 $$
 
-Matris çarpma işlemi sonucunda oluşan yeni vektör $\mathbf{v'} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$, $\mathbf{v}$ vektörünün lineer dönüşümüdür. Yani yeniden ölçeklendirilmiş, yön ve büyüklük değişmiştir.
+Matris çarpma işlemi sonucunda oluşan yeni vektör $\mathbf{v'} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$, $\mathbf{v}$ vektörünün lineer dönüşümüdür. Yani vektör dönüştürülmüş, yönü ve büyüklüğü değişmiştir.
 
 ![matris vektör lineer dönüşüm](/img/matrix_vector_transform.svg)
 
-*Turuncu vektör $\mathbf{v}$, mavi vektör $\mathbf{v'}$ vektörünü temsil etmektedir.*
+*Şekil 2: Turuncu vektör $\mathbf{v}$, mavi vektör $\mathbf{v'}$ vektörünü temsil etmektedir.*
+
+### Sonuç
+Lineer cebir, bilimsel olarak araştırma yaptığımız uzayları modellemek için elimizdeki en iyi araçlardan biridir. Tüm uzayları kağıt kaleme sığdırmak herkesin harcı değildir. Okur daha da derinlere dalmak isterse, aşağıdaki kaynakları inceleyebilir.
+ 
+Bir sonraki yazıda görüşmek üzere!
+ 
+### Kaynaklar
+1. [Dive into Deep Learning](https://d2l.ai/index.html)
+2. [Essence of Linear Algebra — 3Blue1Brown](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
