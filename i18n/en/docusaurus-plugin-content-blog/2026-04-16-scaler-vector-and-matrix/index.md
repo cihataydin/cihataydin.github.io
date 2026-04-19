@@ -62,9 +62,9 @@ $x_1, ..., x_n$ are called coordinate axes. Each coordinate axis measures the le
 >
 > — Morpheus
 
-A matrix represents a linear transformation with respect to a chosen basis. A linear transformation is one that keeps the origin fixed, preserves lines as lines, and does not break the parallelism of parallel lines. Formally, for a transformation $T$ to be linear, it must satisfy the following two conditions:
+A matrix is the numerical representation of a linear transformation that keeps the origin fixed, preserves lines as lines, and does not break the parallelism of parallel lines. Formally, for a transformation $T$ to be linear, it must satisfy the following two conditions:
 
-$$T(\mathbf{u}+\mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}), \qquad T(k\mathbf{v}) = kT(\mathbf{v})$$
+$$T(\mathbf{u}+\mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}), \newline T(k\mathbf{v}) = kT(\mathbf{v})$$
 
 This definition covers operations such as rotation, reflection, scaling, shearing, and projection.
 
@@ -93,9 +93,8 @@ B =
 b_{11} & b_{12} \\
 b_{21} & b_{22} 
 \end{bmatrix}
-\quad \text{be two matrices.} 
 $
-The addition and multiplication operations are as follows.
+be two matrices. The addition and multiplication operations are as follows.
 $$
 A + B =
 \begin{bmatrix}

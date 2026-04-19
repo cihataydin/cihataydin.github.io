@@ -62,9 +62,9 @@ $x_1, ..., x_n$ koordinat eksenleri olarak adlandırılır. Her bir koordinat ek
 >
 > — Morpheus
 
-Matris, seçili bir baza göre bir lineer dönüşümü temsil eder. Lineer dönüşüm ise orijini sabit tutan, doğruları doğru olarak koruyan ve paralel doğruların paralelliğini bozmayan bir dönüşümdür. Formal olarak $T$ dönüşümünün lineer olması için şu iki koşulu sağlaması gerekir:
+Matris, orijini sabit tutan, doğruları doğru olarak koruyan ve paralel doğruların paralelliğini bozmayan bir lineer dönüşümün sayısal temsilidir. Formal olarak $T$ dönüşümünün lineer olması için şu iki koşulu sağlaması gerekir:
 
-$$T(\mathbf{u}+\mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}), \qquad T(k\mathbf{v}) = kT(\mathbf{v})$$
+$$T(\mathbf{u}+\mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v}), \newline T(k\mathbf{v}) = kT(\mathbf{v})$$
 
 Bu tanım; döndürme, yansıtma, ölçeklendirme, kesme (shear) ve izdüşüm gibi işlemlerin hepsini kapsar.
 
@@ -93,9 +93,8 @@ B =
 b_{11} & b_{12} \\
 b_{21} & b_{22} 
 \end{bmatrix}
-\quad \text{iki matris olsun.} 
 $
-Toplama ve çarpma işlemleri aşağıdaki gibidir.
+iki matris olsun. Toplama ve çarpma işlemleri aşağıdaki gibidir.
 $$
 A + B =
 \begin{bmatrix}
