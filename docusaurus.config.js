@@ -13,7 +13,7 @@ const rehypeKatex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Wake up! Geo...',
+  title: 'Wake up! Neo...',
   tagline: 'The Matrix has you...',
   favicon: 'img/favicon.ico',
 
@@ -99,9 +99,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Geo',
+
         logo: {
-          alt: 'Geo Logo',
+          alt: 'Neo Logo',
           src: 'img/logo.svg',
         },
         items: [
