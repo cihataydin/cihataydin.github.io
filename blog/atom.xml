@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://cihataydin.github.io/blog</id>
-    <title>Wake up! Geo... Blog</title>
+    <title>Wake up! Neo... Blog</title>
     <updated>2026-04-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://cihataydin.github.io/blog"/>
-    <subtitle>Wake up! Geo... Blog</subtitle>
+    <subtitle>Wake up! Neo... Blog</subtitle>
     <icon>https://cihataydin.github.io/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Hafif Lineer Cebir]]></title>
