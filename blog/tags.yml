@@ -12,3 +12,13 @@ linear-algebra:
   label: Linear Algebra
   permalink: /linear-algebra
   description: Branch of mathematics
+
+algo:
+  label: Algorithms
+  permalink: /algo
+  description: Algorithms
+
+leet-code:
+  label: LeetCode
+  permalink: /leet-code
+  description: LeetCode problems and solutions
