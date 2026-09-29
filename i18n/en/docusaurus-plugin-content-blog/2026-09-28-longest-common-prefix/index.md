@@ -8,6 +8,7 @@ This is the problem of finding the longest common starting prefix among all word
 Example,
 
 Input: strs = ["flower","flow","flight"]
+
 Output: "fl"
 
 **Solution Logic:**

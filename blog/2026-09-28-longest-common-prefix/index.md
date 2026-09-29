@@ -8,6 +8,7 @@ Verilen bir string dizisindeki (kelime listesindeki) tüm kelimelerin ortak olan
 Örneğin,
 
 Girdi: strs = ["flower","flow","flight"]
+
 Çıktı: "fl"
 
 **Çözüm Mantığı:**
