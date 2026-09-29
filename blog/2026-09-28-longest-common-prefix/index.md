@@ -1,3 +1,9 @@
+---
+slug: longest-common-prefix
+title: En Uzun Ortak Önek
+tags: [algo, leet-code]
+---
+
 Verilen bir string dizisindeki (kelime listesindeki) tüm kelimelerin ortak olan en uzun başlangıç ekini bulma problemidir.
 
 **Çözüm Mantığı:**
