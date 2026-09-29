@@ -15,8 +15,8 @@
         <summary type="html"><![CDATA[This is the problem of finding the longest common starting prefix among all words in a given string array (word list).]]></summary>
         <content type="html"><![CDATA[<p>This is the problem of finding the longest common starting prefix among all words in a given string array (word list).
 Example,</p>
-<p>Input: strs = ["flower","flow","flight"]
-Output: "fl"</p>
+<p>Input: strs = ["flower","flow","flight"]</p>
+<p>Output: "fl"</p>
 <p><strong>Solution Logic:</strong></p>
 <ul>
 <li class="">The first element in the array is taken as a reference, and a loop is established sequentially through the characters of this element.</li>

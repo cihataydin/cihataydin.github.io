@@ -15,8 +15,8 @@
         <summary type="html"><![CDATA[Verilen bir string dizisindeki (kelime listesindeki) tüm kelimelerin ortak olan en uzun başlangıç ekini bulma problemidir.]]></summary>
         <content type="html"><![CDATA[<p>Verilen bir string dizisindeki (kelime listesindeki) tüm kelimelerin ortak olan en uzun başlangıç ekini bulma problemidir.
 Örneğin,</p>
-<p>Girdi: strs = ["flower","flow","flight"]
-Çıktı: "fl"</p>
+<p>Girdi: strs = ["flower","flow","flight"]</p>
+<p>Çıktı: "fl"</p>
 <p><strong>Çözüm Mantığı:</strong></p>
 <ul>
 <li class="">Dizideki ilk eleman referans alınır ve bu elemanın harfleri üzerinden sırayla bir döngü kurulur.</li>
