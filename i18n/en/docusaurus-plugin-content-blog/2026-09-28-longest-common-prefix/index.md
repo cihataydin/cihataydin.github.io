@@ -5,6 +5,10 @@ tags: [algo, leet-code]
 ---
 
 This is the problem of finding the longest common starting prefix among all words in a given string array (word list).
+Example,
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
 
 **Solution Logic:**
 - The first element in the array is taken as a reference, and a loop is established sequentially through the characters of this element.
