@@ -10,10 +10,12 @@ Each opened bracket must be closed by the same type of brackets and in the corre
 For example,
 
 **Input:** `s = "()[]{}"`, **Output:** `true`
+
 **Input:** `s = "([)]"`, **Output:** `false`
+
 **Input:** `s = "([])"`, **Output:** `true`
 
-To solve this, we will use a `stack` data structure and iterate over the `char`acters in the given `string`. We will use the ==LIFO== (Last In, First Out) principle. For each closing bracket, we check the last element added to the `stack`. If it matches, we pop it from the `stack`; otherwise, we push the current bracket onto the `stack`. This way, even in nested structures, we can validate the parentheses from the inside out.
+To solve this, we will use a `stack` data structure and iterate over the `char`acters in the given `string`. We will use the LIFO (Last In, First Out) principle. For each closing bracket, we check the last element added to the `stack`. If it matches, we pop it from the `stack`; otherwise, we push the current bracket onto the `stack`. This way, even in nested structures, we can validate the parentheses from the inside out.
 
 ### TypeScript
 

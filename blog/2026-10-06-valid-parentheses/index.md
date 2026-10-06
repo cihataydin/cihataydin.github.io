@@ -10,10 +10,12 @@ Açılan her parantez aynı çeşit parantez ve aynı sıra ile kapatılmalıdı
 Örneğin,
 
 **Girdi:** `s = "()[]{}"`, **Çıktı:** `true`
+
 **Girdi:** `s = "([)]"` **Çıktı:** `false`
+
 **Girdi:** `s = "([])"` **Çıktı:** `true`
 
-Çözüm için `stack` yapısını kullanacağız ve verilen `string` de `char` lar üzerine döngü kuracağız. ==LIFO== mantığını kullanacağız. Her kapalı parantez için `stack` e eklenen son elemanı kontrol edip eşleşmiş ise `stack` den sileceğiz yoksa `stack` e ekleyeceğiz. Böylece nested yapıda dahi içerden dışarıya doğru parantezleri kontrol etmiş olacağız.
+Çözüm için `stack` yapısını kullanacağız ve verilen `string` de `char` lar üzerine döngü kuracağız. LIFO mantığını kullanacağız. Her kapalı parantez için `stack` e eklenen son elemanı kontrol edip eşleşmiş ise `stack` den sileceğiz yoksa `stack` e ekleyeceğiz. Böylece nested yapıda dahi içerden dışarıya doğru parantezleri kontrol etmiş olacağız.
 
 ### TypeScirpt
 
