@@ -4,10 +4,94 @@
         <title>Wake up! Neo... Blog</title>
         <link>https://cihataydin.github.io/blog</link>
         <description>Wake up! Neo... Blog</description>
-        <lastBuildDate>Tue, 06 Oct 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 17 Oct 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>tr</language>
+        <item>
+            <title><![CDATA[Biletix Sistem Tasarımı]]></title>
+            <link>https://cihataydin.github.io/blog/biletix-system-design</link>
+            <guid>https://cihataydin.github.io/blog/biletix-system-design</guid>
+            <pubDate>Sat, 17 Oct 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Giriş]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="giriş">Giriş<a href="https://cihataydin.github.io/blog/biletix-system-design#giri%C5%9F" class="hash-link" aria-label="Giriş doğrudan bağlantı" title="Giriş doğrudan bağlantı" translate="no">​</a></h3>
+<p>Sistem tasarımı sırasında aşağıdaki mantık sırasını kullanarak ilerleyeceğiz.</p>
+<p><img decoding="async" loading="lazy" alt="System Design Tools" src="https://cihataydin.github.io/assets/images/system-design-tools-1b294d1f3d707ce96b458737faf9f994.svg" width="2058" height="589" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sistem-tanımı">Sistem Tanımı<a href="https://cihataydin.github.io/blog/biletix-system-design#sistem-tan%C4%B1m%C4%B1" class="hash-link" aria-label="Sistem Tanımı doğrudan bağlantı" title="Sistem Tanımı doğrudan bağlantı" translate="no">​</a></h3>
+<p>Çeşitli etkinliklerin yer aldığı, kullanıcıların bu etkinlikler için bilet veya biletler satın alabildiği sistem.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fonksiyonel-gereksinimler">Fonksiyonel Gereksinimler<a href="https://cihataydin.github.io/blog/biletix-system-design#fonksiyonel-gereksinimler" class="hash-link" aria-label="Fonksiyonel Gereksinimler doğrudan bağlantı" title="Fonksiyonel Gereksinimler doğrudan bağlantı" translate="no">​</a></h3>
+<ul>
+<li class="">Kullanıcılar gelecek etkinlikleri görüntüleyebilir olmalı.</li>
+<li class="">Bu etkinlikler için bilet satın alma işlemi yapabilir olmalı.</li>
+<li class="">Etkinlikleri arayabiliyor olmalı.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fonksiyonel-olmayan-gereksinimler">Fonksiyonel Olmayan Gereksinimler<a href="https://cihataydin.github.io/blog/biletix-system-design#fonksiyonel-olmayan-gereksinimler" class="hash-link" aria-label="Fonksiyonel Olmayan Gereksinimler doğrudan bağlantı" title="Fonksiyonel Olmayan Gereksinimler doğrudan bağlantı" translate="no">​</a></h3>
+<ul>
+<li class="">Low latency search (düşük gecikmeli arama) &lt; 500ms</li>
+<li class="">Okuma işlemlerimiz yazma işlemlerimizden daha çok (Okuma &gt; Yazma)</li>
+<li class="">Yüksek talep gören etkinlikleri yönetme.</li>
+<li class="">Arama yapma, <code>Availability</code> (Erişilebilirlik), bilet satın almada, <code>Consistency</code> (Tutarlılık)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-arayüz">API Arayüz<a href="https://cihataydin.github.io/blog/biletix-system-design#api-aray%C3%BCz" class="hash-link" aria-label="API Arayüz doğrudan bağlantı" title="API Arayüz doğrudan bağlantı" translate="no">​</a></h3>
+<p><code>GET /events/{eventId} =&gt; etkinlik, mekan, sanatçı, biletler[]</code></p>
+<p><code>GET /search?keyword={keyword}&amp;startDate={sDate}&amp;endDate={eDate}&amp;pageSize{}&amp;pageNumber={} =&gt; etkinlik[]</code></p>
+<p><code>POST /bookings/{eventId}</code>
+<code>{</code>
+<code>ticketIds: [],</code>
+<code>paymentDetails: {}</code>
+<code>}</code></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="veri-modeli">Veri Modeli<a href="https://cihataydin.github.io/blog/biletix-system-design#veri-modeli" class="hash-link" aria-label="Veri Modeli doğrudan bağlantı" title="Veri Modeli doğrudan bağlantı" translate="no">​</a></h3>
+<p><code>events</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class=""><code>venue_id</code></li>
+<li class=""><code>performer_id</code></li>
+<li class=""><code>tickets[]</code></li>
+<li class=""><code>name</code></li>
+<li class=""><code>description</code></li>
+<li class="">...</li>
+</ul>
+<p><code>venues</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class=""><code>location</code></li>
+<li class=""><code>seat_map</code></li>
+</ul>
+<p><code>performers</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class="">...</li>
+</ul>
+<p><code>tickets</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class=""><code>event_id</code></li>
+<li class=""><code>seat</code></li>
+<li class=""><code>price</code></li>
+<li class=""><code>status {available, reserved, booked}</code></li>
+<li class=""><code>user_id</code></li>
+</ul>
+<p><code>bookings</code></p>
+<ul>
+<li class=""><code>user_id</code></li>
+<li class=""><code>tickets[]</code></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="yüksek-seviye-mimari">Yüksek Seviye Mimari<a href="https://cihataydin.github.io/blog/biletix-system-design#y%C3%BCksek-seviye-mimari" class="hash-link" aria-label="Yüksek Seviye Mimari doğrudan bağlantı" title="Yüksek Seviye Mimari doğrudan bağlantı" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Biletix System Design" src="https://cihataydin.github.io/assets/images/biletix-system-design-d3d3da06d7eab277765afaad01f5ca9c.svg" width="1281" height="727" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="darboğaz-analizi-ve-ölçekleme">Darboğaz Analizi ve Ölçekleme<a href="https://cihataydin.github.io/blog/biletix-system-design#darbo%C4%9Faz-analizi-ve-%C3%B6l%C3%A7ekleme" class="hash-link" aria-label="Darboğaz Analizi ve Ölçekleme doğrudan bağlantı" title="Darboğaz Analizi ve Ölçekleme doğrudan bağlantı" translate="no">​</a></h3>
+<p>Örnek bir senaryo düşünelim. Tarkan konser biletleri satışa çıksın ve en öndeki bir koltuğa aynı milisaniye içinde binlerce istek gelsin. Eğer bu yükü doğrudan veritabanına gönderip satır kilitleme (<code>row-level lock</code>) yapılırsa, veritabanının <code>CPU</code>'su anında tavan yapar ve tüm sistem kilitlenir. Bu yüzden, koltuğun müsaitlik durumunu ve kilitleme işini veritabanından önce <code>RAM</code> üzerinde, yani <code>Redis</code>'te çözülmesi gerekir. <code>Redis</code>'in tek thread (<code>single-threaded</code>) yapısı ve <code>SetNX</code> (Set If Not Exists) komutu ihtiyacı çözer. Burada önemli nokta <code>TTL(Time to Live)</code> kullanılması, böylece müşteri süre aşımına uğrasa dahi aynı bilet tekrar satın alınabilir statüde olabilecektir. Bu basit mantık sayesinde, yarış durumu (race condition) olmadan yüz binlerce istek <code>RAM</code> üzerinde eritilir.</p>
+<p>Yine Tarkan konseri biletleri satışa çıksın. Cumartesi saat 10:00 olsun. Milyonlarca kullanıcı aynı anda sayfayı yenilesin. Eğer bu isteklere doğrudan cevap verilirse, aradaki redis ve load balancer fayda göstermeden, arka taraftaki servis anlık (spike) yükten dolayı boğulur. Kullanıcılar 503 hatası almaya başlar. Bir sanal bekleme odası (virtual waiting room) kullanılır. Sistemin kapasitesi kadar kullanıcı içeri alınır diğer kullanıcılar ise bekletilir. Örnek olarak bir <code>API Gateway</code> ve <code>Queue</code> ikilisi düşünülebilir. Sistem kapasitesi müsait oldukça <code>SSE (Server Sent Events)</code> gönderilerek bekleme odasındaki kullanıcılar içeriye davet edilir.</p>
+<p>Queue'daki mantık,</p>
+<ul>
+<li class="">Sıra numarası ve benzersiz bir <code>token</code> verilir.</li>
+<li class="">Kullanıcılar kuyruğa alınır.</li>
+<li class="">Kapasite kadar kullanıcı içeri alınır. (<code>throttling</code>)</li>
+</ul>
+<p>Bu mimari sayesinde, sistem (core backend, veritabanı) sadece hizmet verebileceği kadar insanla muhatap olur.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="referanslar">Referanslar<a href="https://cihataydin.github.io/blog/biletix-system-design#referanslar" class="hash-link" aria-label="Referanslar doğrudan bağlantı" title="Referanslar doğrudan bağlantı" translate="no">​</a></h3>
+<p><a href="https://mvpakademi.com/course/5-buyuk-sistem-tasarimi" target="_blank" rel="noopener noreferrer" class="">5 büyük sistem tasarımı</a></p>]]></content:encoded>
+            <category>System Design</category>
+        </item>
         <item>
             <title><![CDATA[Geçerli Parantezler]]></title>
             <link>https://cihataydin.github.io/blog/valid-parentheses</link>

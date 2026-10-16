@@ -2,11 +2,95 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://cihataydin.github.io/en/blog</id>
     <title>Wake up! Neo... Blog</title>
-    <updated>2026-10-06T00:00:00.000Z</updated>
+    <updated>2026-10-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://cihataydin.github.io/en/blog"/>
     <subtitle>Wake up! Neo... Blog</subtitle>
     <icon>https://cihataydin.github.io/en/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Biletix System Design]]></title>
+        <id>https://cihataydin.github.io/en/blog/biletix-system-design</id>
+        <link href="https://cihataydin.github.io/en/blog/biletix-system-design"/>
+        <updated>2026-10-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="https://cihataydin.github.io/en/blog/biletix-system-design#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h3>
+<p>During the system design process, we will proceed by using the following logical sequence.</p>
+<p><img decoding="async" loading="lazy" alt="System Design Tools" src="https://cihataydin.github.io/en/assets/images/system-design-tools-1b294d1f3d707ce96b458737faf9f994.svg" width="2058" height="589" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-description">System Description<a href="https://cihataydin.github.io/en/blog/biletix-system-design#system-description" class="hash-link" aria-label="Direct link to System Description" title="Direct link to System Description" translate="no">​</a></h3>
+<p>A system featuring various events where users can purchase one or more tickets for these events.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="functional-requirements">Functional Requirements<a href="https://cihataydin.github.io/en/blog/biletix-system-design#functional-requirements" class="hash-link" aria-label="Direct link to Functional Requirements" title="Direct link to Functional Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Users must be able to view upcoming events.</li>
+<li class="">Users must be able to purchase tickets for these events.</li>
+<li class="">Users must be able to search for events.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="non-functional-requirements">Non-Functional Requirements<a href="https://cihataydin.github.io/en/blog/biletix-system-design#non-functional-requirements" class="hash-link" aria-label="Direct link to Non-Functional Requirements" title="Direct link to Non-Functional Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Low latency search &lt; 500ms</li>
+<li class="">Read operations outnumber write operations (Reads &gt; Writes)</li>
+<li class="">Managing high-demand events</li>
+<li class=""><code>Consistency</code> in search, <code>Availability</code>, and ticket purchasing</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-interface">API Interface<a href="https://cihataydin.github.io/en/blog/biletix-system-design#api-interface" class="hash-link" aria-label="Direct link to API Interface" title="Direct link to API Interface" translate="no">​</a></h3>
+<p><code>GET /events/{eventId} =&gt; event, venue, performer, tickets[]</code></p>
+<p><code>GET /search?keyword={keyword}&amp;startDate={sDate}&amp;endDate={eDate}&amp;pageSize{}&amp;pageNumber={} =&gt; event[]</code></p>
+<p><code>POST /bookings/{eventId}</code>
+<code>{</code>
+<code>ticketIds: [],</code>
+<code>paymentDetails: {}</code>
+<code>}</code></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-model">Data Model<a href="https://cihataydin.github.io/en/blog/biletix-system-design#data-model" class="hash-link" aria-label="Direct link to Data Model" title="Direct link to Data Model" translate="no">​</a></h3>
+<p><code>events</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class=""><code>venue_id</code></li>
+<li class=""><code>performer_id</code></li>
+<li class=""><code>tickets[]</code></li>
+<li class=""><code>name</code></li>
+<li class=""><code>description</code></li>
+<li class="">...</li>
+</ul>
+<p><code>venues</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class=""><code>location</code></li>
+<li class=""><code>seat_map</code></li>
+</ul>
+<p><code>performers</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class="">...</li>
+</ul>
+<p><code>tickets</code></p>
+<ul>
+<li class=""><code>id</code></li>
+<li class=""><code>event_id</code></li>
+<li class=""><code>seat</code></li>
+<li class=""><code>price</code></li>
+<li class=""><code>status {available, reserved, booked}</code></li>
+<li class=""><code>user_id</code></li>
+</ul>
+<p><code>bookings</code></p>
+<ul>
+<li class=""><code>user_id</code></li>
+<li class=""><code>tickets[]</code></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-architecture">High-Level Architecture<a href="https://cihataydin.github.io/en/blog/biletix-system-design#high-level-architecture" class="hash-link" aria-label="Direct link to High-Level Architecture" title="Direct link to High-Level Architecture" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Biletix System Design" src="https://cihataydin.github.io/en/assets/images/biletix-system-design-d3d3da06d7eab277765afaad01f5ca9c.svg" width="1281" height="727" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bottleneck-analysis-and-scaling">Bottleneck Analysis and Scaling<a href="https://cihataydin.github.io/en/blog/biletix-system-design#bottleneck-analysis-and-scaling" class="hash-link" aria-label="Direct link to Bottleneck Analysis and Scaling" title="Direct link to Bottleneck Analysis and Scaling" translate="no">​</a></h3>
+<p>Let's consider an example scenario. Tarkan concert tickets go on sale, and thousands of requests hit the front-row seat within the exact same millisecond. If this load is sent directly to the database and a <code>row-level lock</code> is applied, the database <code>CPU</code> will instantly max out, and the entire system will lock up. Therefore, checking seat availability and handling the locking mechanism must be resolved in <code>RAM</code>—specifically using <code>Redis</code>—before hitting the database. <code>Redis</code>'s <code>single-threaded</code> architecture and the <code>SetNX</code> (Set If Not Exists) command solve this need. An important point here is using <code>TTL (Time to Live)</code>, so that even if the customer times out, the same ticket can return to an available status. Thanks to this simple logic, hundreds of thousands of requests are absorbed directly in <code>RAM</code> without any race conditions.</p>
+<p>Now, let's suppose Tarkan concert tickets go on sale again on a Saturday at 10:00 AM. Millions of users refresh the page simultaneously. If these requests are answered directly, the Redis layer and load balancer won't be enough, and the backend service will crash due to the sudden spike in load. Users will start receiving 503 errors. A virtual waiting room is used. Users are let in according to system capacity while others are kept waiting. For example, an <code>API Gateway</code> and <code>Queue</code> combination can be envisioned. As system capacity becomes available, users in the waiting room are invited in via <code>SSE (Server Sent Events)</code>.</p>
+<p>The logic behind the Queue:</p>
+<ul>
+<li class="">A queue number and a unique <code>token</code> are issued.</li>
+<li class="">Users are placed in the queue.</li>
+<li class="">Users are let in matching the system capacity (<code>throttling</code>).</li>
+</ul>
+<p>Thanks to this architecture, the system (core backend, database) only deals with as many people as it can effectively serve.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="references">References<a href="https://cihataydin.github.io/en/blog/biletix-system-design#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h3>
+<p><a href="https://mvpakademi.com/course/5-buyuk-sistem-tasarimi" target="_blank" rel="noopener noreferrer" class="">5 major system designs</a></p>]]></content>
+        <category label="System Design" term="System Design"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Valid Parentheses]]></title>
         <id>https://cihataydin.github.io/en/blog/valid-parentheses</id>
