@@ -22,3 +22,8 @@ leet-code:
   label: LeetCode
   permalink: /leet-code
   description: LeetCode problems and solutions
+
+system-design:
+  label: System Design
+  permalink: /system-design
+  description: System Design concepts and discussions
