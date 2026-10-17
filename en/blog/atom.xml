@@ -15,7 +15,7 @@
         <summary type="html"><![CDATA[Introduction]]></summary>
         <content type="html"><![CDATA[<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="introduction">Introduction<a href="https://cihataydin.github.io/en/blog/biletix-system-design#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction" translate="no">​</a></h3>
 <p>During the system design process, we will proceed by using the following logical sequence.</p>
-<p><img decoding="async" loading="lazy" alt="System Design Tools" src="https://cihataydin.github.io/en/assets/images/system-design-tools-1b294d1f3d707ce96b458737faf9f994.svg" width="2058" height="589" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="System Design Tools" src="https://cihataydin.github.io/en/assets/images/system-design-tools-d2fb290d4081f3a48c53ecd65c42e67a.svg" width="2058" height="589" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="system-description">System Description<a href="https://cihataydin.github.io/en/blog/biletix-system-design#system-description" class="hash-link" aria-label="Direct link to System Description" title="Direct link to System Description" translate="no">​</a></h3>
 <p>A system featuring various events where users can purchase one or more tickets for these events.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="functional-requirements">Functional Requirements<a href="https://cihataydin.github.io/en/blog/biletix-system-design#functional-requirements" class="hash-link" aria-label="Direct link to Functional Requirements" title="Direct link to Functional Requirements" translate="no">​</a></h3>
@@ -32,49 +32,9 @@
 <li class=""><code>Consistency</code> in search, <code>Availability</code>, and ticket purchasing</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="api-interface">API Interface<a href="https://cihataydin.github.io/en/blog/biletix-system-design#api-interface" class="hash-link" aria-label="Direct link to API Interface" title="Direct link to API Interface" translate="no">​</a></h3>
-<p><code>GET /events/{eventId} =&gt; event, venue, performer, tickets[]</code></p>
-<p><code>GET /search?keyword={keyword}&amp;startDate={sDate}&amp;endDate={eDate}&amp;pageSize{}&amp;pageNumber={} =&gt; event[]</code></p>
-<p><code>POST /bookings/{eventId}</code>
-<code>{</code>
-<code>ticketIds: [],</code>
-<code>paymentDetails: {}</code>
-<code>}</code></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">GET /events/{eventId} =&gt; etkinlik, mekan, sanatçı, biletler[]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">GET /search?keyword={keyword}&amp;startDate={sDate}&amp;endDate={eDate}&amp;pageSize{}&amp;pageNumber={} =&gt; etkinlik[]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">POST /bookings/{eventId}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">{</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">	ticketIds: [],</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">	paymentDetails: {}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-model">Data Model<a href="https://cihataydin.github.io/en/blog/biletix-system-design#data-model" class="hash-link" aria-label="Direct link to Data Model" title="Direct link to Data Model" translate="no">​</a></h3>
-<p><code>events</code></p>
-<ul>
-<li class=""><code>id</code></li>
-<li class=""><code>venue_id</code></li>
-<li class=""><code>performer_id</code></li>
-<li class=""><code>tickets[]</code></li>
-<li class=""><code>name</code></li>
-<li class=""><code>description</code></li>
-<li class="">...</li>
-</ul>
-<p><code>venues</code></p>
-<ul>
-<li class=""><code>id</code></li>
-<li class=""><code>location</code></li>
-<li class=""><code>seat_map</code></li>
-</ul>
-<p><code>performers</code></p>
-<ul>
-<li class=""><code>id</code></li>
-<li class="">...</li>
-</ul>
-<p><code>tickets</code></p>
-<ul>
-<li class=""><code>id</code></li>
-<li class=""><code>event_id</code></li>
-<li class=""><code>seat</code></li>
-<li class=""><code>price</code></li>
-<li class=""><code>status {available, reserved, booked}</code></li>
-<li class=""><code>user_id</code></li>
-</ul>
-<p><code>bookings</code></p>
-<ul>
-<li class=""><code>user_id</code></li>
-<li class=""><code>tickets[]</code></li>
-</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">events</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- venue_id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- performer_id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- tickets[]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- name</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- description</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">venues</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- location</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- seat_map</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">performers</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">tickets</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- event_id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- seat</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- price</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- status {available, booked}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- user_id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">bookings</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- user_id</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">- tickets[]</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-architecture">High-Level Architecture<a href="https://cihataydin.github.io/en/blog/biletix-system-design#high-level-architecture" class="hash-link" aria-label="Direct link to High-Level Architecture" title="Direct link to High-Level Architecture" translate="no">​</a></h3>
 <p><img decoding="async" loading="lazy" alt="Biletix System Design" src="https://cihataydin.github.io/en/assets/images/biletix-system-design-d3d3da06d7eab277765afaad01f5ca9c.svg" width="1281" height="727" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="bottleneck-analysis-and-scaling">Bottleneck Analysis and Scaling<a href="https://cihataydin.github.io/en/blog/biletix-system-design#bottleneck-analysis-and-scaling" class="hash-link" aria-label="Direct link to Bottleneck Analysis and Scaling" title="Direct link to Bottleneck Analysis and Scaling" translate="no">​</a></h3>
