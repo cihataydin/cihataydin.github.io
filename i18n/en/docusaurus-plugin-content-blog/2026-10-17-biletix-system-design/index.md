@@ -25,7 +25,7 @@ A system featuring various events where users can purchase one or more tickets f
 - Low latency search < 500ms
 - Read operations outnumber write operations (Reads > Writes)
 - Managing high-demand events
-- `Consistency` in search, `Availability`, and ticket purchasing
+- `Availability` in search, and `Consistency` in ticket purchasing
 
 ### API Interface
 
