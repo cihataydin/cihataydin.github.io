@@ -8,7 +8,7 @@ tags: [system-design]
 
 Sistem tasarımı sırasında aşağıdaki mantık sırasını kullanarak ilerleyeceğiz.
 
-![System Design Tools](/img/system-design-tools.svg)
+![System Design Tools](/img/system-design-tools-tr.svg)
 
 ### Sistem Tanımı
 
@@ -29,47 +29,51 @@ Sistem tasarımı sırasında aşağıdaki mantık sırasını kullanarak ilerle
 
 ### API Arayüz
 
-`GET /events/{eventId} => etkinlik, mekan, sanatçı, biletler[]`
+```
+GET /events/{eventId} => etkinlik, mekan, sanatçı, biletler[]
 
-`GET /search?keyword={keyword}&startDate={sDate}&endDate={eDate}&pageSize{}&pageNumber={} => etkinlik[]`
+GET /search?keyword={keyword}&startDate={sDate}&endDate={eDate}&pageSize{}&pageNumber={} => etkinlik[]
 
-`POST /bookings/{eventId}`
-`{`
-	`ticketIds: [],`
-	 `paymentDetails: {}`
-`}`
+POST /bookings/{eventId}
+{
+	ticketIds: [],
+	paymentDetails: {}
+}
+```
 
 ### Veri Modeli
 
-`events`
-- `id`
-- `venue_id`
-- `performer_id`
-- `tickets[]`
-- `name`
-- `description`
+```
+events
+- id
+- venue_id
+- performer_id
+- tickets[]
+- name
+- description
 - ...
 
-`venues`
-- `id`
-- `location`
-- `seat_map`
+venues
+- id
+- location
+- seat_map
 
-`performers`
-- `id`
+performers
+- id
 - ...
 
-`tickets`
-- `id`
-- `event_id`
-- `seat`
-- `price`
-- `status {available, reserved, booked}`
-- `user_id`
-
-`bookings`
-- `user_id`
-- `tickets[]`
+tickets
+- id
+- event_id
+- seat
+- price
+- status {available, booked}
+- user_id
+  
+bookings
+- user_id
+- tickets[]
+```
 
 ### Yüksek Seviye Mimari
 

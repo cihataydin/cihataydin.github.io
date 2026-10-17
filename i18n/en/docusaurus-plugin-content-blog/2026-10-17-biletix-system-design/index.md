@@ -29,47 +29,51 @@ A system featuring various events where users can purchase one or more tickets f
 
 ### API Interface
 
-`GET /events/{eventId} => event, venue, performer, tickets[]`
+```
+GET /events/{eventId} => etkinlik, mekan, sanatçı, biletler[]
 
-`GET /search?keyword={keyword}&startDate={sDate}&endDate={eDate}&pageSize{}&pageNumber={} => event[]`
+GET /search?keyword={keyword}&startDate={sDate}&endDate={eDate}&pageSize{}&pageNumber={} => etkinlik[]
 
-`POST /bookings/{eventId}`
-`{`
-    `ticketIds: [],`
-     `paymentDetails: {}`
-`}`
+POST /bookings/{eventId}
+{
+	ticketIds: [],
+	paymentDetails: {}
+}
+```
 
 ### Data Model
 
-`events`
-- `id`
-- `venue_id`
-- `performer_id`
-- `tickets[]`
-- `name`
-- `description`
+```
+events
+- id
+- venue_id
+- performer_id
+- tickets[]
+- name
+- description
 - ...
 
-`venues`
-- `id`
-- `location`
-- `seat_map`
+venues
+- id
+- location
+- seat_map
 
-`performers`
-- `id`
+performers
+- id
 - ...
 
-`tickets`
-- `id`
-- `event_id`
-- `seat`
-- `price`
-- `status {available, reserved, booked}`
-- `user_id`
-
-`bookings`
-- `user_id`
-- `tickets[]`
+tickets
+- id
+- event_id
+- seat
+- price
+- status {available, booked}
+- user_id
+  
+bookings
+- user_id
+- tickets[]
+```
 
 ### High-Level Architecture
 
