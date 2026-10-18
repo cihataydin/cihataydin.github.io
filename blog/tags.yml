@@ -27,3 +27,8 @@ system-design:
   label: System Design
   permalink: /system-design
   description: System Design concepts and discussions
+
+deep-learning:
+  label: Deep Learning
+  permalink: /deep-learning
+  description: Deep Learning concepts and tutorials
