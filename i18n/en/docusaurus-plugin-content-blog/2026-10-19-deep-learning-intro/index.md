@@ -460,7 +460,7 @@ Regularization is a set of techniques applied to prevent the model from overfitt
 
 ### Dropout
 
-During training, certain activations are randomly set to zero to prevent them from affecting the output. This forces the network not to rely heavily on any single perceptron. For instance, half of the perceptrons in a layer can be dropped out during training.
+During training, certain activations are randomly set to zero. This forces the network not to rely heavily on any single perceptron. For instance, half of the perceptrons in a layer can be dropped out during training.
 
 ```python
 # TensorFlow

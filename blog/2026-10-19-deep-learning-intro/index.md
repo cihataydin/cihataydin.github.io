@@ -449,7 +449,7 @@ Modelin eğitim verilerine aşırı uyum sağlamasını önlemek ve genelleme ye
 
 ### Nöron Düşürme
 
-Eğitim sırasında, çıktıya etki etmemesi için rastgele bazı aktivasyon fonksiyonları sıfır kabul edilir. Ağın herhangi bir algılayıcıya bel bağlamaması için yapılır. Örneğin, eğitim sırasında katmandaki algılayıcıların yarısı iptal edilebilir.
+Eğitim sırasında, rastgele bazı aktivasyon fonksiyonları sıfır kabul edilir. Ağın herhangi bir algılayıcıya bel bağlamaması için yapılır. Örneğin, eğitim sırasında katmandaki algılayıcıların yarısı iptal edilebilir.
 
 ```python
 # TensorFlow
