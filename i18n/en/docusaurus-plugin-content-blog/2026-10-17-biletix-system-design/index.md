@@ -94,4 +94,4 @@ Thanks to this architecture, the system (core backend, database) only deals with
 
 ### References
 
-[5 major system designs](https://mvpakademi.com/course/5-buyuk-sistem-tasarimi)
+[5 Major System Designs](https://mvpakademi.com/course/5-buyuk-sistem-tasarimi)

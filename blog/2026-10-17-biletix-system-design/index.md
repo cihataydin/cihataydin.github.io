@@ -94,4 +94,4 @@ Bu mimari sayesinde, sistem (core backend, veritabanı) sadece hizmet verebilece
 
 ### Referanslar
 
-[5 büyük sistem tasarımı](https://mvpakademi.com/course/5-buyuk-sistem-tasarimi)
+[5 Büyük Sistem Tasarımı](https://mvpakademi.com/course/5-buyuk-sistem-tasarimi)
