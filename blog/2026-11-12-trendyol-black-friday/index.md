@@ -8,6 +8,8 @@ Bu yazımızda, aşağıdaki yol haritasını kullanarak trendyol kara cuma indi
 
 ![System Design Tools](/img/system-design-tools-tr.svg)
 
+<!-- truncate -->
+
 ### Fonksiyonel Gereksinimler
 
 - Kullanıcılar ana sayfada flash indirim olan ürünleri görebilir ve arama yapabilir.

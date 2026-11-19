@@ -17,6 +17,8 @@ For example,
 
 To solve this, we will use a `stack` data structure and iterate over the `char`acters in the given `string`. We will use the LIFO (Last In, First Out) principle. For each closing bracket, we check the last element added to the `stack`. If it matches, we pop it from the `stack`; otherwise, we push the current bracket onto the `stack`. This way, even in nested structures, we can validate the parentheses from the inside out.
 
+<!-- truncate -->
+
 ### TypeScript
 
 I was able to define an array and treat it directly like a `stack`. I learned the `const .. of ..` syntax and remembered that I can use `Record` instead of `Object`. $(4ms)$

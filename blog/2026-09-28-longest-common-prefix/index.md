@@ -11,6 +11,8 @@ Girdi: strs = ["flower","flow","flight"]
 
 Çıktı: "fl"
 
+<!-- truncate -->
+
 **Çözüm Mantığı:**
 - Dizideki ilk eleman referans alınır ve bu elemanın harfleri üzerinden sırayla bir döngü kurulur.
 - Her döngü adımında, o anki harf dizinin geri kalan elemanları ile kıyaslanır.

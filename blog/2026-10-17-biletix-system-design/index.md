@@ -14,6 +14,8 @@ Sistem tasarımı sırasında aşağıdaki mantık sırasını kullanarak ilerle
 
 Çeşitli etkinliklerin yer aldığı, kullanıcıların bu etkinlikler için bilet veya biletler satın alabildiği sistem.
 
+<!-- truncate -->
+
 ### Fonksiyonel Gereksinimler
 
 - Kullanıcılar gelecek etkinlikleri görüntüleyebilir olmalı.

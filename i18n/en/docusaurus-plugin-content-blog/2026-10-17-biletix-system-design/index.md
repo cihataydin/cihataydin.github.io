@@ -10,6 +10,8 @@ During the system design process, we will proceed by using the following logical
 
 ![System Design Tools](/img/system-design-tools.svg)
 
+<!-- truncate -->
+
 ### System Description
 
 A system featuring various events where users can purchase one or more tickets for these events.

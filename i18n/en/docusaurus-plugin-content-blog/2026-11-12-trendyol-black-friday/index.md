@@ -8,6 +8,8 @@ In this article, we will design a system for Trendyol Black Friday discount peri
 
 ![System Design Tools](/img/system-design-tools.svg)
 
+<!-- truncate -->
+
 ### Functional Requirements
 
 - Users can view flash sale products on the homepage and perform searches.

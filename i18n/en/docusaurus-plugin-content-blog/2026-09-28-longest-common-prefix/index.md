@@ -11,6 +11,8 @@ Input: strs = ["flower","flow","flight"]
 
 Output: "fl"
 
+<!-- truncate -->
+
 **Solution Logic:**
 - The first element in the array is taken as a reference, and a loop is established sequentially through the characters of this element.
 - At each loop step, the current character is compared with the remaining elements of the array.

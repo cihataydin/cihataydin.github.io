@@ -10,6 +10,7 @@ Bu yazıda derin öğrenme temellerine göz atacağız.
 
 ![The Perceptron Forward Propagation](/img/the-perceptron-forward-propagation.svg)
 
+<!-- truncate -->
 
 $$
 \hat{y} = g\left(w_0 + \sum_{i=1}^{m} x_i w_i\right)

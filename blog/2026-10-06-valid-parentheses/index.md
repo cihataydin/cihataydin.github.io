@@ -17,6 +17,8 @@ Açılan her parantez aynı çeşit parantez ve aynı sıra ile kapatılmalıdı
 
 Çözüm için `stack` yapısını kullanacağız ve verilen `string` de `char` lar üzerine döngü kuracağız. LIFO mantığını kullanacağız. Her kapalı parantez için `stack` e eklenen son elemanı kontrol edip eşleşmiş ise `stack` den sileceğiz yoksa `stack` e ekleyeceğiz. Böylece nested yapıda dahi içerden dışarıya doğru parantezleri kontrol etmiş olacağız.
 
+<!-- truncate -->
+
 ### TypeScirpt
 
 Dizi tanımlayıp direk `stack` miş gibi işlem yapabildim. `const .. of ..` yapısını öğrendim. `Object` yerine `Record` kullanabilceğimi hatırladım. $(4ms)$

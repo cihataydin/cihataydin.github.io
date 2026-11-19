@@ -55,6 +55,10 @@ const config = {
     },
   },
 
+  plugins: [
+    'docusaurus-plugin-image-zoom',
+  ],
+
   presets: [
     [
       'classic',
@@ -126,6 +130,13 @@ const config = {
         darkTheme: prismThemes.dracula,
         additionalLanguages: ['csharp', 'php'],
       },
+      zoom: {
+      selector: '.markdown :not(em) > img',
+      background: {
+        light: '#fafaf7',
+        dark: '#0a0a0a',
+      },
+    }
     }),
 };
 
