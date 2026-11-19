@@ -1,0 +1,25 @@
+/*
+Mobile: the dark/light toggle and the language dropdown are rendered directly
+in the header (top right) via the swizzled NavbarContent. Infima hides
+`.navbar__item` elements in small viewports by default, so opt back in here to
+keep them visible in the header on mobile.
+ */
+@media (max-width: 996px) {
+  :global(.navbar__items--right) > :last-child {
+    padding-right: 0;
+  }
+
+  :global(.navbar__items--right) > :global(.navbar__item) {
+    display: inline-block;
+  }
+}
+
+.colorModeToggle {
+  display: inline-flex;
+}
+
+@media (max-width: 996px) {
+  .colorModeToggle {
+    margin-right: 0.25rem;
+  }
+}
