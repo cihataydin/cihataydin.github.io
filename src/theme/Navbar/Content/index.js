@@ -87,7 +87,11 @@ export default function NavbarContent() {
         <>
           {isMobile ? (
             <>
-              {localeItem && <NavbarItem {...localeItem} />}
+              {localeItem && (
+                <div className={styles.mobileHeaderControls}>
+                  <NavbarItem {...localeItem} />
+                </div>
+              )}
               <NavbarColorModeToggle className={styles.colorModeToggle} />
               {!searchBarItem && (
                 <NavbarSearch>
