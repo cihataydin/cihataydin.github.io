@@ -58,7 +58,7 @@
   --ifm-card-background-color: #0a140a;
 
   /* Text */
-  --ifm-font-color-base: #c8ffc8;
+  --ifm-font-color-base: #a9d3a9;
   --ifm-heading-color: #00ff41;
   --ifm-link-color: #00ff41;
   --ifm-link-hover-color: #4dff72;
@@ -268,7 +268,7 @@ h1, h2, h3, h4 {
 [data-theme='dark'] .hero__title {
   color: #00ff41;
   font-family: 'JetBrains Mono', monospace;
-  text-shadow: 0 0 30px rgba(0, 255, 65, 0.5), 0 0 60px rgba(0, 255, 65, 0.2);
+  text-shadow: 0 0 18px rgba(0, 255, 65, 0.35), 0 0 40px rgba(0, 255, 65, 0.15);
   letter-spacing: -0.03em;
 }
 
