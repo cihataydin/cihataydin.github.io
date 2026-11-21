@@ -399,6 +399,13 @@ h1, h2, h3, h4 {
   z-index: 9998;
 }
 
+/* ── Image zoom (fullscreen overlay) background ─────────────── */
+/* Keep the fullscreen zoom overlay in sync with the active theme,
+   so the light mode background never falls back to a dark color. */
+.medium-zoom-overlay {
+  background: var(--ifm-background-color) !important;
+}
+
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
